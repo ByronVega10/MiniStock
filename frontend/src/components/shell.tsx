@@ -10,7 +10,7 @@ export function Shell({ children }: { children: ReactNode }) {
   const path = usePathname(); const { products, today, loading, error } = useInventory();
   const alerts = products.reduce((total, p) => total + Number(p.quantity <= p.minStock) + Number(daysRemaining(p.expirationDate, today) <= 7), 0);
   return <div className="app-shell"><aside className="sidebar">
-    <Link href="/" className="brand"><span className="brand-icon"><Boxes size={25} /></span>MiniStock<span className="brand-dot">.</span></Link>
+    <Link href="/" className="brand" aria-label="MiniStock, ir al Lobby"><span className="brand-icon"><Boxes size={25} /></span>MiniStock<span className="brand-dot">.</span></Link>
     <p className="nav-label">GESTIÓN DE INVENTARIO</p>
     <nav aria-label="Navegación principal">{navigation.map(({ href, label, icon: Icon }) => <Link key={href} href={href} className={`nav-link ${path === href ? 'active' : ''}`} aria-current={path === href ? 'page' : undefined}><Icon size={20} /><span>{label}</span>{href === '/alerts' && !loading && !error && alerts > 0 && <span className="nav-count">{alerts}</span>}</Link>)}</nav>
     <div className="sidebar-bottom"><div className="demo-card"><PackageCheck size={21} /><strong>Tu inventario conectado</strong><p>Productos, stock y vencimientos en un solo lugar.</p><span>Cambios guardados en tu inventario</span></div><div className="sidebar-footer"><span className="store-avatar">M</span><div><strong>Mi minimarket</strong><small>Gestión de inventario</small></div></div></div>
