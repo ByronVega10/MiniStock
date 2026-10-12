@@ -1,0 +1,52 @@
+# Dependencias y compilación
+node_modules/
+.next/
+dist/
+out/
+build/
+coverage/
+next-env.d.ts
+
+# Entornos privados; conservar únicamente las plantillas sin credenciales
+.env
+.env.*
+*.env
+!.env.example
+
+# Cachés y archivos temporales
+.npm-cache/
+.cache/
+.turbo/
+.swc/
+.vercel/
+.eslintcache
+*.tsbuildinfo
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Claves privadas y respaldos locales de bases de datos
+*.pem
+*.key
+*.p12
+*.pfx
+*.dump
+*.pgdump
+*.backup
+*.bak
+*.sql
+*.sql.gz
+*.sql.zip
+/backups/
+/respaldos/
+
+# Prisma Client se regenera al compilar; las migraciones sí se versionan
+/backend/src/generated/prisma/
+/backend/generated/prisma/
+!/backend/prisma/migrations/
+!/backend/prisma/migrations/**/*.sql

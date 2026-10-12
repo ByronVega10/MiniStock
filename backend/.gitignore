@@ -1,0 +1,14 @@
+# Dependencias, compilación, caché y registros locales
+node_modules/
+dist/
+coverage/
+.npm-cache/
+*.log
+*.tsbuildinfo
+src/generated/prisma/
+
+# Entornos locales: solo se versiona la plantilla sin secretos
+.env
+.env.*
+*.env
+!.env.example
